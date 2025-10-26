@@ -173,19 +173,6 @@ if (signupBtn) {
   });
 }
 
-// show saved email if exists (create header-user if missing)
-const stored = localStorage.getItem("userEmail");
-if (stored) {
-  let userEl = document.getElementById("header-user");
-  if (!userEl) {
-    const header = document.getElementById("header") || document.body;
-    userEl = document.createElement("div");
-    userEl.id = "header-user";
-    userEl.style.cssText = "display:inline-block;margin-left:12px;font-weight:600";
-    header.insertBefore(userEl, header.firstChild);
-  }
-  userEl.textContent = "Signed in: " + stored;
-}
 
 // listen for storage changes (other tab)
 window.addEventListener("storage", (e) => {
